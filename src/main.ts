@@ -9,7 +9,6 @@ import log from './lib/log'
 async function main(): Promise<void> {
   try {
     const { cachePath, targetDir, targetPath, options } = getVars()
-
     if (await exists(cachePath)) {
       await mkdirP(targetDir)
       await mv(cachePath, targetPath, { force: true })
